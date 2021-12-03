@@ -7,7 +7,7 @@ const updateStudy = async(req, res, next) => { //규칙 수정
         const user=await User.findOne({where:{id:userId}});
         const {studyDay,studyPenalty,studySolve}=req.body;
         await Study.update({study_day:studyDay,study_solve:studySolve, study_penalty: studyPenalty},{where:{id:user.StudyId}});
-        res.status(200).json({mesage:"Study Rules Updated"});
+        res.status(200).json({message:"Study Rules Updated"});
     }
     catch(err){
         console.error(err);

@@ -117,7 +117,7 @@ const hasStudy = (req, res, next) => {//토큰 생성해서 client에게 보냄
             return res.status(404).json({message: "user not found"});
         } else { //존재
             if(!dbUser.StudyId) return res.status(200).json({message:"nostudy"})
-            else return res.status(200).json({message:"makestudy"})
+            else return res.status(200).json({message:"calendar"})
         };
     })
     .catch(err => {
