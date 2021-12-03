@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const dotenv=require('dotenv');
 
 const app = express();
+
 dotenv.config();
 
 app.use(express.urlencoded({ extended: true}));
@@ -18,6 +19,7 @@ app.use((_, res, next) => {
     next();
 });
 
+
 app.use(router);
 
 sequelize.sync({force:false})
@@ -28,4 +30,4 @@ sequelize.sync({force:false})
         console.error(err);
     });
 
-app.listen(5000);
+app.set('port',process.env.PORT||5000);
