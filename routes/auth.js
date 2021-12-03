@@ -112,6 +112,8 @@ const isAuthCookie = (req, res, next) => {//내가 누구인가
 };
 
 const hasStudy = (req, res, next) => {//토큰 생성해서 client에게 보냄
+    console.log(res.locals.userId);
+    console.log("어디가ㅏ 문제야ㅑㅑㅑㅑㅑㅑㅑㅑ")
     User.findOne({ where : { id: res.locals.userId}})
     .then(dbUser => {
         if (!dbUser) {
