@@ -110,7 +110,7 @@ const isAuthCookie = (req, res, next) => {//내가 누구인가
     };
 };
 
-const hasStudy = (req, res, next) => {//토큰 생성해서 client에게 보냄
+const hasStudy = (req, res, next) => {
     User.findOne({ where : { id: res.locals.userId}})
     .then(dbUser => {
         if (!dbUser) {
