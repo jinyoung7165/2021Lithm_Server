@@ -1,5 +1,5 @@
-const User = require('../models/user');
-const Study = require('../models/study');
+const User = require('../../models/user');
+const Study = require('../../models/study');
 
 const updateStudy = async(req, res, next) => { //규칙 수정
     try{
