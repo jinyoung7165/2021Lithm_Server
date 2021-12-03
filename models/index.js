@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const User = require('./user');
 const Problem = require('./problem');
 const Study = require('./study');
-const env =  'development';
+const env = process.env.NODE_ENV || 'development';
 const config = require('../config/config')[env];
 
 const db = {};
