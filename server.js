@@ -30,4 +30,4 @@ sequelize.sync({force:false})
         console.error(err);
     });
 
-app.set('port',process.env.PORT||5000);
+app.listen(process.env.PORT||5000);
