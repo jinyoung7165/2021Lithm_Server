@@ -97,8 +97,6 @@ const isAuth = (req, res, next) => {//client로부터 받은 토큰 검증
 };
 const isAuthCookie = (req, res, next) => {//내가 누구인가
     try {
-    console.log("여기야여이",req.headers.cookie); //dbUser=어쩌구; user=1
-    console.log("여기야~~",req.headers);
     const userId=req.headers.cookie.split('=')[1];
 
     if (!userId) { //로그인x
@@ -113,8 +111,6 @@ const isAuthCookie = (req, res, next) => {//내가 누구인가
 };
 
 const hasStudy = (req, res, next) => {//토큰 생성해서 client에게 보냄
-    console.log(res.locals.userId);
-    console.log("어디가ㅏ 문제야ㅑㅑㅑㅑㅑㅑㅑㅑ")
     User.findOne({ where : { id: res.locals.userId}})
     .then(dbUser => {
         if (!dbUser) {
