@@ -2,8 +2,9 @@ const express = require('express');
 const { sequelize } = require('./models/index.js');
 const router = require('./routes/route');
 const cookieParser = require("cookie-parser");
-const app = express();
 const dotenv=require('dotenv');
+
+const app = express();
 dotenv.config();
 
 app.use(express.urlencoded({ extended: true}));
